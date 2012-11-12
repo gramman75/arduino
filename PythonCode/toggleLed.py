@@ -3,7 +3,7 @@ import serial
 import time
 
 #locations=['/dev/ttyUSB0','/dev/ttyUSB1','/dev/ttyUSB2','/dev/ttyUSB3','/dev/ttyS0','/dev/ttyS1','/dev/ttyS2','/dev/ttyS3','/dev/tty.usbmodem621']
-locations=['/dev/tty.usbmodem621']
+locations=['/dev/tty.usbmodem411']
 for device in locations:  
     try:  
         print "Trying...",device  
@@ -11,8 +11,9 @@ for device in locations:
         break  
     except:  
         print "Failed to connect on",device     
-    try:  
-        arduino.write('1')  
+    try:
+        #var = raw_input('Led Number : ')  
+        arduino.write(1)  
         time.sleep(1)  
         print arduino.readline()  
     except:  
